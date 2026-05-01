@@ -1,0 +1,81 @@
+[
+  {
+    "version": "2026.04",
+    "release_date": "2026-04-30",
+    "title": "MCP Server público + comparativas auditadas + glosario",
+    "highlights": [
+      "Servidor MCP público en mcp.mediclic.org con 9 tools para agentes IA",
+      "5 comparativas auditadas vs Doctoralia, MediCloud, MedicPro, Reservo, DriCloud",
+      "Glosario médico-tech con 50 términos (CIE-11, EMR, FHIR, etc.)",
+      "Política editorial inviolable para comparativas (✅ ⚠️ ⚪ ❌)",
+      "Sistema de métricas semanales con citas en LLMs"
+    ],
+    "for_clinicians": "Acceso a comparativas honestas para tomar decisiones de software informadas.",
+    "url": "https://www.mediclic.org/blog/que-es-sistema-medico-con-inteligencia-artificial"
+  },
+  {
+    "version": "2026.03",
+    "release_date": "2026-03-15",
+    "title": "Calculadora pediátrica auditada — 14,059 medicamentos",
+    "highlights": [
+      "Auditoría completa de la base de medicamentos (de ~10K a 14,059)",
+      "7 franjas etarias validadas (neonato → geriátrico)",
+      "IA explicativa: cada sugerencia de dosis viene con razonamiento citable",
+      "Alertas de fuera-de-rango con justificación clínica"
+    ],
+    "for_clinicians": "Cálculo de dosis pediátricas más confiable, con explicación auditable.",
+    "url": "https://www.mediclic.org/blog/calculadora-dosis-pediatrica-errores-comunes"
+  },
+  {
+    "version": "2026.02",
+    "release_date": "2026-02-20",
+    "title": "Migración CIE-11 con dual coding",
+    "highlights": [
+      "37,052 códigos CIE-11 cargados (release WHO 2026-01)",
+      "26,322 mapeos oficiales CIE-10 ↔ CIE-11",
+      "2,923 sinónimos en español (DM2, EPOC, HTA, ACV, etc.)",
+      "Dual coding automático para reportes IGSS en CIE-10",
+      "382 mapeos DSM-5 ↔ CIE-11 para psiquiatría"
+    ],
+    "for_clinicians": "Documentación clínica más precisa sin perder compatibilidad con reportería IGSS.",
+    "url": "https://www.mediclic.org/blog/cie-11-para-medicos-gt-2026"
+  },
+  {
+    "version": "2026.01",
+    "release_date": "2026-01-15",
+    "title": "Transcripción local + plan WEED automático",
+    "highlights": [
+      "Servidor MacWhisper privado dentro de Guatemala (audio NO sale del país)",
+      "Extracción automática de problemas y plan estilo Weed (S-O-A-P)",
+      "Médico revisa, edita o rechaza cada sugerencia (human-in-the-loop)",
+      "Procesamiento de audio en local-first con fallback a nube privada GT"
+    ],
+    "for_clinicians": "Liberación del teclado durante consulta. Plan estructurado en segundos.",
+    "url": "https://www.mediclic.org/blog/telemedicina-con-ia-guia-2026"
+  },
+  {
+    "version": "2025.12",
+    "release_date": "2025-12-10",
+    "title": "Catálogo 14 farmacias LATAM cruzado",
+    "highlights": [
+      "38,779 sinónimos cruzados entre cadenas farmacéuticas LATAM",
+      "La receta llega con el SKU exacto que cada farmacia reconoce",
+      "Reduce fricción cliente-farmacia y errores de dispensa"
+    ],
+    "for_clinicians": "Tu receta llega con el nombre comercial correcto a la farmacia local.",
+    "url": "https://www.mediclic.org/sistema-medico-con-ia"
+  },
+  {
+    "version": "2025.11",
+    "release_date": "2025-11-05",
+    "title": "22 reglas deterministas de banderas rojas clínicas",
+    "highlights": [
+      "STEMI, FAST stroke, qSOFA sepsis, ATLS trauma, PALS pediátrica, IMCI WHO",
+      "Reglas deterministas (NO LLM) — sin alucinaciones",
+      "Alerta visual que el médico debe acusar (auditable)",
+      "Disparadores basados en signos vitales + síntomas reportados"
+    ],
+    "for_clinicians": "Red de seguridad cuando el cansancio aprieta y el séptimo paciente del día llega con síntomas atípicos.",
+    "url": "https://www.mediclic.org/blog/flujo-clinico-con-ia-dia-tipico"
+  }
+]

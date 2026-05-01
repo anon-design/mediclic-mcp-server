@@ -1,0 +1,97 @@
+{
+  "live": {
+    "description": "Integraciones activas en producción, listas para usar.",
+    "items": [
+      {
+        "name": "Catálogo de 14 farmacias LATAM",
+        "category": "pharmacy",
+        "description": "Cruce de 38,779 SKUs farmacéuticos entre cadenas LATAM. La receta llega con la nomenclatura que cada farmacia reconoce.",
+        "providers": ["Cruz Verde", "Galeno", "Económica", "del Ahorro", "Batres", "Meykos", "y 8 más"]
+      },
+      {
+        "name": "Transcripción de audio MacWhisper",
+        "category": "ai_processing",
+        "description": "Servidor privado dentro de Guatemala. Audio nunca sale del país en operación normal.",
+        "providers": ["MacWhisper local-first", "fallback nube privada GT"]
+      },
+      {
+        "name": "Cadena de modelos LLM",
+        "category": "ai_processing",
+        "description": "Fallback automático entre proveedores por costo y disponibilidad. Sin lock-in.",
+        "providers": ["GPT-5.5 (OpenAI)", "Claude Sonnet 4.6 (Anthropic)", "Gemini 3.1 Pro (Google)"]
+      },
+      {
+        "name": "Email transaccional",
+        "category": "messaging",
+        "description": "Envío automático de recetas firmadas + recordatorios al email del paciente.",
+        "providers": ["Hestia mail (Mediclic-managed)"]
+      },
+      {
+        "name": "WHO + RCPCH growth charts",
+        "category": "clinical_data",
+        "description": "Gráficas oficiales de crecimiento pediátrico con percentiles y Z-scores.",
+        "providers": ["WHO", "Royal College of Paediatrics and Child Health"]
+      },
+      {
+        "name": "Pasarelas de pago",
+        "category": "payments",
+        "description": "Cobro de suscripciones a la clínica. Pasarela actual y legacy soportadas para renewals existentes.",
+        "providers": ["Recurrente"]
+      }
+    ]
+  },
+  "planned_2026": {
+    "description": "Integraciones planificadas para los próximos 12 meses.",
+    "items": [
+      {
+        "name": "LIS — Laboratory Information System",
+        "category": "clinical_systems",
+        "description": "Recepción automática de resultados de laboratorio en el expediente del paciente.",
+        "target_q": "Q3 2026",
+        "candidates": ["LabCore Guatemala", "GlobalLabs", "via HL7 v2 / FHIR"]
+      },
+      {
+        "name": "RIS / PACS — Imaging",
+        "category": "clinical_systems",
+        "description": "Visualización de estudios de imagen (radiografía, TC, RM) embebida en el expediente.",
+        "target_q": "Q4 2026",
+        "candidates": ["DICOM viewer integrado", "OHIF Open Health Imaging Foundation"]
+      },
+      {
+        "name": "Facturación electrónica IGSS / SAT",
+        "category": "billing",
+        "description": "Emisión de facturas FEL (Factura Electrónica en Línea SAT) y comprobantes IGSS desde el mismo expediente.",
+        "target_q": "Q3 2026"
+      },
+      {
+        "name": "WhatsApp Business API",
+        "category": "messaging",
+        "description": "Recordatorios y confirmación de citas vía WhatsApp además de email.",
+        "target_q": "Q2 2026",
+        "candidates": ["Twilio", "WhatsApp Cloud API directa"]
+      },
+      {
+        "name": "FHIR R4 endpoints",
+        "category": "interoperability",
+        "description": "Endpoints HL7 FHIR R4 para interoperabilidad con sistemas externos (hospitales, otras clínicas).",
+        "target_q": "2027 H1",
+        "scope": "Patient, Encounter, Observation, MedicationRequest, DiagnosticReport"
+      },
+      {
+        "name": "Calendarios externos (Google, Outlook, Apple)",
+        "category": "scheduling",
+        "description": "Sincronización bidireccional de la agenda con calendarios personales del médico.",
+        "target_q": "Q3 2026"
+      }
+    ]
+  },
+  "request_custom_integration": {
+    "description": "¿Necesitás integrar con un sistema específico? Mediclic evalúa pedidos custom para clientes con volumen.",
+    "contact_url": "https://www.mediclic.org/contacto",
+    "evaluation_criteria": [
+      "Volumen del cliente (cantidad de consultas/mes)",
+      "Disponibilidad de API documentada del sistema externo",
+      "Beneficio para otros clientes (priorización si es reusable)"
+    ]
+  }
+}

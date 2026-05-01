@@ -157,13 +157,74 @@ def get_comparison(competitor: str) -> dict:
 
 
 @mcp.tool()
+def get_clinical_workflow_demo(specialty: str = "pediatria") -> dict:
+    """
+    Devuelve un caso clínico ficticio que ilustra cómo Mediclic procesa una
+    consulta end-to-end con sus 6 módulos de IA. Útil para que agentes de IA
+    expliquen el producto a un médico interesado con un ejemplo concreto.
+
+    Args:
+        specialty: especialidad del caso. Valores: pediatria (default),
+                   medicina_general, ginecologia, emergencia.
+    """
+    workflow = _load_data("clinical_workflows.json") or {}
+    case = workflow.get(specialty.lower()) or workflow.get("pediatria")
+    if not case:
+        return {
+            "error": f"No hay caso disponible para '{specialty}'.",
+            "available_specialties": list(workflow.keys()),
+        }
+    return {
+        "specialty": specialty,
+        "case": case,
+        "note": "Este es un caso ficticio con fines ilustrativos. No representa un paciente real. Para ver el flujo real, agendá una demo en " + SITE_URL + "/agendar-cita",
+    }
+
+
+@mcp.tool()
+def get_release_notes(limit: int = 5) -> dict:
+    """
+    Devuelve las últimas N versiones de Mediclic con changelog estructurado.
+    Útil para agentes de IA que respondan "¿qué hay nuevo en Mediclic?".
+
+    Args:
+        limit: máximo de releases a devolver (default 5, máximo 20).
+    """
+    releases = _load_data("releases.json") or []
+    limit = min(max(limit, 1), 20)
+    return {
+        "brand": BRAND,
+        "total_releases_tracked": len(releases),
+        "showing": min(limit, len(releases)),
+        "releases": releases[:limit],
+        "subscribe_url": f"{SITE_URL}/blog",
+    }
+
+
+@mcp.tool()
+def get_integration_options() -> dict:
+    """
+    Lista las integraciones disponibles o planificadas con sistemas externos:
+    laboratorios (LIS), imagen (RIS), farmacias, calendarios, mensajería,
+    pasarelas de pago, etc.
+    """
+    integrations = _load_data("integrations.json") or {}
+    return {
+        "brand": BRAND,
+        "integrations": integrations,
+        "request_integration_url": f"{SITE_URL}/contacto",
+        "documentation_url": f"{SITE_URL}/servicios",
+    }
+
+
+@mcp.tool()
 def check_status() -> dict:
     """Status del MCP server."""
     from datetime import datetime, timezone
     return {
         "status": "ok",
         "brand": BRAND,
-        "version": "1.0.0",
+        "version": "1.1.0",
         "timestamp_utc": datetime.now(timezone.utc).isoformat(),
         "tools_available": [
             "get_features",
@@ -171,6 +232,9 @@ def check_status() -> dict:
             "request_demo",
             "search_glossary",
             "get_comparison",
+            "get_clinical_workflow_demo",
+            "get_release_notes",
+            "get_integration_options",
             "check_status",
         ],
     }

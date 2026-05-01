@@ -1,0 +1,120 @@
+{
+  "pediatria": {
+    "title": "Niño de 4 años con fiebre y dolor de garganta",
+    "context": "Paciente: niño de 4 años, peso 16.5 kg, talla 102 cm. Acude por fiebre 38.7°C de 3 días, dolor de garganta. Madre reporta hermano enfermo en casa.",
+    "steps": [
+      {
+        "stage": "Apertura del expediente (segundos 0-15)",
+        "ai_module": "EMR multi-tenant",
+        "action": "Asistente carga signos vitales pre-tomados, expediente histórico (vacunas al día, alergia documentada a penicilina, episodio de bronquiolitis a los 8 meses)."
+      },
+      {
+        "stage": "Entrevista + transcripción (minutos 0-6)",
+        "ai_module": "Transcripción de audio (local-first MacWhisper)",
+        "action": "El médico habla con la madre y examina al niño sin tocar el teclado. La transcripción aparece en panel lateral. Audio NO sale del país."
+      },
+      {
+        "stage": "Resumen + diagnóstico (segundos 6:00-6:04)",
+        "ai_module": "Sugerencia CIE-11 + extracción WEED",
+        "action": "Al cerrar audio: IA propone resumen S-O-A-P + ranking de diagnósticos: CA03 (faringitis aguda estreptocócica) #1, CA01 (faringitis aguda viral) #2."
+      },
+      {
+        "stage": "Validación de prescripción (segundos 6:04-6:30)",
+        "ai_module": "Calculadora pediátrica auditada",
+        "action": "Al seleccionar amoxicilina, IA detecta alergia y descarta automáticamente. Sugiere azitromicina 200mg/5ml. Calculadora propone: 10 mg/kg/día = 165 mg/día → 4 ml cada 24h por 5 días. Rango 8-12 mg/kg/día. Auditado contra 14,059 medicamentos."
+      },
+      {
+        "stage": "Firma + envío (segundos 6:30-7:00)",
+        "ai_module": "Recetas con firma digital criptográfica",
+        "action": "Médico firma con un clic. PDF con SHA-256+HMAC, doble QR (público + privado). Envío automático al email de la madre + sistema de la farmacia local con el SKU correcto del catálogo de 14 farmacias LATAM."
+      }
+    ],
+    "total_consultation_time_minutes": 12,
+    "comparison_without_ia_minutes": "18-20 (transcripción manual + escritura del plan + cálculo manual + verificación alergia + impresión)",
+    "time_saved_percent": 35
+  },
+  "medicina_general": {
+    "title": "Adulto 52 años con DM2 mal controlada (telemedicina)",
+    "context": "Paciente en zona rural, control de seguimiento de diabetes tipo 2. Última HbA1c 8.2% (mejoró respecto a 9.5% hace 6 meses, pero sigue >7% objetivo).",
+    "steps": [
+      {
+        "stage": "Videollamada (minutos 0-1)",
+        "ai_module": "Telemedicina integrada",
+        "action": "Paciente entra al link, conecta cámara y micrófono. Médico ve la cara y empieza la entrevista."
+      },
+      {
+        "stage": "Entrevista con transcripción (minutos 1-7)",
+        "ai_module": "Transcripción + extracción de problemas",
+        "action": "Conversación normal, IA transcribe en tiempo real (servidor MacWhisper local en el consultorio del médico). Detecta y subraya menciones de síntomas + valores de glucosa."
+      },
+      {
+        "stage": "Banderas rojas (continuo)",
+        "ai_module": "22 reglas deterministas",
+        "action": "Reglas qSOFA, FAST, hipoglucemia se activan si aplica. En este caso: ninguna alerta crítica, solo seguimiento."
+      },
+      {
+        "stage": "Plan terapéutico (minuto 7-10)",
+        "ai_module": "Sugerencia + plantillas",
+        "action": "IA carga el último HbA1c y propone ajuste: aumentar metformina 850mg c/12h → 1000mg c/12h. Médico confirma. Genera orden lab para próximo control."
+      },
+      {
+        "stage": "Firma + receta a farmacia local (minuto 10-11)",
+        "ai_module": "Receta firmada + catálogo farmacias",
+        "action": "Receta digital firmada, enviada a la farmacia más cercana del paciente. La paciente la recoge sin moverse de su pueblo (se ahorra viaje de 4 horas)."
+      }
+    ],
+    "total_consultation_time_minutes": 11,
+    "comparison_without_ia_minutes": "no aplica (sin telemedicina + IA, el paciente requeriría viaje de 4h ida + 4h vuelta a la capital)",
+    "time_saved_for_patient_hours": 8
+  },
+  "emergencia": {
+    "title": "Niño 7 años con dolor abdominal sospechoso",
+    "context": "Niño llega con dolor en fosa ilíaca derecha, signo de Blumberg positivo, fiebre 38.2°C. Hemograma de hace 2 días con leucocitosis.",
+    "steps": [
+      {
+        "stage": "Examen físico (minutos 0-5)",
+        "ai_module": "EMR multi-sección",
+        "action": "Médico documenta examen físico en sección dedicada. Sistema captura signos vitales y resultados de hemograma previo del expediente."
+      },
+      {
+        "stage": "Bandera roja DISPARADA (segundos del minuto 5)",
+        "ai_module": "Reglas deterministas (22 banderas rojas)",
+        "action": "🚩 ALERTA: Sospecha de apendicitis aguda. Triada: dolor en FID + Blumberg + fiebre + leucocitosis. Recomendación: derivación a emergencia para evaluación quirúrgica. NO es alucinación de LLM, es regla determinista auditada."
+      },
+      {
+        "stage": "Coordinación derivación (minutos 5-8)",
+        "ai_module": "Plantillas de informes",
+        "action": "Médico llama al hospital de referencia. IA pre-llena resumen clínico para imprimir/enviar: motivo, examen físico, hemograma previo, sospecha diagnóstica, signos a vigilar."
+      },
+      {
+        "stage": "Salida del paciente (minuto 8)",
+        "action": "El paciente sale del consultorio rumbo a urgencias en 8 minutos desde que entró. Sin alerta, podría haber pasado desapercibido si el médico estaba cansado."
+      }
+    ],
+    "total_consultation_time_minutes": 8,
+    "outcome": "Derivación temprana a quirófano. La alerta NO toma la decisión por el médico, solo asegura que no se pase por alto."
+  },
+  "ginecologia": {
+    "title": "Mujer 28 años con dolor pélvico cíclico — sospecha endometriosis",
+    "context": "Paciente con dolor pélvico cíclico de 2 años, dispareunia, dismenorrea progresiva. Fertilidad como objetivo a mediano plazo.",
+    "steps": [
+      {
+        "stage": "Anamnesis estructurada (minutos 0-8)",
+        "ai_module": "EMR + transcripción",
+        "action": "Médica conduce entrevista. Transcripción captura cronología detallada del dolor + impacto en calidad de vida + antecedentes ginecológicos."
+      },
+      {
+        "stage": "Diagnóstico + plan (minutos 8-12)",
+        "ai_module": "CIE-11 + plantillas",
+        "action": "IA propone GA10 (Endometriosis) y subdivisiones (GA10.0 ovárica, GA10.1 peritoneal, etc.). Médica indica RM pélvica + CA-125 + interconsulta con cirugía ginecológica. Plantilla de educación al paciente con explicación de endometriosis se envía por email."
+      },
+      {
+        "stage": "Receta + seguimiento",
+        "ai_module": "Receta firmada + agenda",
+        "action": "Receta de AINE + ACO continuo firmada con doble QR. Programa control en 6 semanas con resultados."
+      }
+    ],
+    "total_consultation_time_minutes": 14,
+    "feature_highlights": ["CIE-11 con cluster específico ginecológico", "plantillas educativas precargadas", "agenda integrada con recordatorio automático"]
+  }
+}
