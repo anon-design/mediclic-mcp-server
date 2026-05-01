@@ -1,0 +1,338 @@
+[
+  {
+    "slug": "emr",
+    "termino": "EMR",
+    "aliases": [
+      "Electronic Medical Record",
+      "Expediente Médico Electrónico"
+    ],
+    "definicion": "Sistema digital donde un consultorio o clínica documenta la historia clínica de cada paciente: anamnesis, examen físico, diagnósticos, prescripciones y notas de evolución. Reemplaza al expediente en papel."
+  },
+  {
+    "slug": "ehr",
+    "termino": "EHR",
+    "aliases": [
+      "Electronic Health Record",
+      "Expediente Electrónico de Salud"
+    ],
+    "definicion": "Versión más amplia del EMR: además de la información clínica de un consultorio, integra datos de múltiples proveedores (laboratorios, farmacias, hospitales) sobre el mismo paciente."
+  },
+  {
+    "slug": "cie-10",
+    "termino": "CIE-10",
+    "aliases": [
+      "ICD-10"
+    ],
+    "definicion": "Clasificación Internacional de Enfermedades, décima edición. Estándar OMS para codificar diagnósticos. Es el código que IGSS y MSPAS usan para reportes."
+  },
+  {
+    "slug": "cie-11",
+    "termino": "CIE-11",
+    "aliases": [
+      "ICD-11"
+    ],
+    "definicion": "Undécima edición de la Clasificación Internacional de Enfermedades (release WHO 2026-01). 37,052 códigos con mejor estructura para enfermedades mentales y nuevas patologías. En Guatemala convive con CIE-10 hasta directiva ministerial."
+  },
+  {
+    "slug": "ciap-2",
+    "termino": "CIAP-2",
+    "aliases": [
+      "ICPC-2"
+    ],
+    "definicion": "Clasificación Internacional de Atención Primaria, segunda edición. Codifica motivos de consulta y problemas de salud en atención primaria, complementaria a CIE-10/CIE-11."
+  },
+  {
+    "slug": "dsm-5",
+    "termino": "DSM-5",
+    "aliases": [],
+    "definicion": "Manual Diagnóstico y Estadístico de los Trastornos Mentales (American Psychiatric Association). Estándar para diagnósticos psiquiátricos. Mediclic mapea DSM-5 con CIE-11 para 407 diagnósticos."
+  },
+  {
+    "slug": "snomed-ct",
+    "termino": "SNOMED-CT",
+    "aliases": [],
+    "definicion": "Terminología clínica internacional con más de 350,000 conceptos médicos. Más granular que CIE pero también más compleja. Útil para interoperabilidad clínica avanzada."
+  },
+  {
+    "slug": "hl7",
+    "termino": "HL7",
+    "aliases": [],
+    "definicion": "Health Level Seven International. Estándar de mensajería para intercambio de datos clínicos entre sistemas de salud. La versión moderna se llama FHIR."
+  },
+  {
+    "slug": "fhir",
+    "termino": "FHIR",
+    "aliases": [
+      "Fast Healthcare Interoperability Resources"
+    ],
+    "definicion": "Estándar HL7 moderno basado en REST y JSON para intercambio de datos clínicos. La opción preferida para interoperabilidad en proyectos nuevos."
+  },
+  {
+    "slug": "telemedicina",
+    "termino": "Telemedicina",
+    "aliases": [],
+    "definicion": "Práctica de la medicina a distancia mediante videollamada, mensajería o teléfono. En Mediclic está integrada al expediente: la videoconsulta, transcripción de audio y receta firmada ocurren en el mismo flujo."
+  },
+  {
+    "slug": "teleconsulta",
+    "termino": "Teleconsulta",
+    "aliases": [],
+    "definicion": "Consulta médica realizada por videollamada o medio digital. Sinónimo de telemedicina ambulatoria. La receta sigue siendo legalmente válida si está firmada digitalmente."
+  },
+  {
+    "slug": "firma-digital",
+    "termino": "Firma digital",
+    "aliases": [],
+    "definicion": "Mecanismo criptográfico (típicamente SHA-256 + HMAC o claves asimétricas) que vincula un documento a un firmante de forma verificable e inalterable. Mediclic firma cada receta con SHA-256 + HMAC y dos QR."
+  },
+  {
+    "slug": "qr-receta",
+    "termino": "QR de receta",
+    "aliases": [],
+    "definicion": "Código QR impreso en la receta digital. En Mediclic hay dos: uno público (verifica que la receta es auténtica) y uno privado (la farmacia escanea para registrar la dispensa)."
+  },
+  {
+    "slug": "weed",
+    "termino": "Plan Weed",
+    "aliases": [
+      "SOAP"
+    ],
+    "definicion": "Modelo de documentación clínica orientada a problemas (Lawrence Weed, 1968). Estructura cada nota en S (subjetivo), O (objetivo), A (assessment/diagnóstico), P (plan)."
+  },
+  {
+    "slug": "anamnesis",
+    "termino": "Anamnesis",
+    "aliases": [],
+    "definicion": "Recolección estructurada de información del paciente sobre el motivo de consulta, antecedentes y síntomas. Es la primera sección del expediente clínico."
+  },
+  {
+    "slug": "calculadora-pediatrica",
+    "termino": "Calculadora pediátrica",
+    "aliases": [],
+    "definicion": "Herramienta que calcula dosis de medicamentos en pediatría según peso, edad y franja etaria. Mediclic audita 14,059 medicamentos sobre 7 franjas (neonato → geriátrico)."
+  },
+  {
+    "slug": "banderas-rojas",
+    "termino": "Banderas rojas clínicas",
+    "aliases": [
+      "Red flags"
+    ],
+    "definicion": "Signos o síntomas que indican una condición potencialmente grave que requiere atención inmediata. Mediclic implementa 22 reglas deterministas (STEMI, FAST stroke, qSOFA sepsis, ATLS, PALS, IMCI)."
+  },
+  {
+    "slug": "stemi",
+    "termino": "STEMI",
+    "aliases": [],
+    "definicion": "Infarto agudo al miocardio con elevación del segmento ST. Emergencia cardiovascular que requiere reperfusión inmediata (angioplastía o trombolisis)."
+  },
+  {
+    "slug": "fast",
+    "termino": "FAST stroke",
+    "aliases": [],
+    "definicion": "Acrónimo de Face-Arms-Speech-Time. Tamizaje rápido de accidente cerebrovascular en consultorio o sala de emergencia."
+  },
+  {
+    "slug": "qsofa",
+    "termino": "qSOFA",
+    "aliases": [],
+    "definicion": "Quick Sequential Organ Failure Assessment. Tamizaje de sepsis con 3 criterios: PA sistólica ≤100, frecuencia respiratoria ≥22, alteración del estado mental."
+  },
+  {
+    "slug": "atls",
+    "termino": "ATLS",
+    "aliases": [],
+    "definicion": "Advanced Trauma Life Support. Protocolo para evaluación y manejo del paciente politraumatizado. Define el ABCDE del trauma."
+  },
+  {
+    "slug": "pals",
+    "termino": "PALS",
+    "aliases": [],
+    "definicion": "Pediatric Advanced Life Support. Protocolo de soporte vital pediátrico avanzado para emergencias en menores de 18 años."
+  },
+  {
+    "slug": "imci",
+    "termino": "IMCI",
+    "aliases": [
+      "AIEPI"
+    ],
+    "definicion": "Integrated Management of Childhood Illness (OMS). En español AIEPI. Estrategia de tamizaje pediátrico para detectar condiciones graves en menores de 5 años."
+  },
+  {
+    "slug": "rcpch",
+    "termino": "RCPCH",
+    "aliases": [],
+    "definicion": "Royal College of Paediatrics and Child Health (Reino Unido). Publica las gráficas de crecimiento pediátricas más usadas internacionalmente, complementarias a las de la OMS."
+  },
+  {
+    "slug": "percentil",
+    "termino": "Percentil",
+    "aliases": [],
+    "definicion": "Indica qué porcentaje de la población está por debajo de un valor dado. Ej: peso percentil 50 significa que el niño pesa más que el 50% de la población de su edad."
+  },
+  {
+    "slug": "z-score",
+    "termino": "Z-score",
+    "aliases": [],
+    "definicion": "Número de desviaciones estándar desde la media. Usado en gráficas pediátricas: Z=0 es la media, Z=±2 marca los extremos típicos."
+  },
+  {
+    "slug": "imc",
+    "termino": "IMC",
+    "aliases": [
+      "BMI"
+    ],
+    "definicion": "Índice de Masa Corporal. Peso (kg) dividido por estatura (m) al cuadrado. Indicador de bajo peso, sobrepeso u obesidad."
+  },
+  {
+    "slug": "igss",
+    "termino": "IGSS",
+    "aliases": [],
+    "definicion": "Instituto Guatemalteco de Seguridad Social. Sistema público de salud y seguridad social en Guatemala. Requiere reportes en CIE-10 con formato específico."
+  },
+  {
+    "slug": "mspas",
+    "termino": "MSPAS",
+    "aliases": [],
+    "definicion": "Ministerio de Salud Pública y Asistencia Social de Guatemala. Regulador del sistema de salud público y privado."
+  },
+  {
+    "slug": "ia-clinica",
+    "termino": "IA clínica",
+    "aliases": [
+      "Inteligencia artificial clínica",
+      "AI in healthcare"
+    ],
+    "definicion": "Aplicación de modelos de inteligencia artificial al flujo clínico: sugerencias de diagnóstico, cálculo de dosis, transcripción de consultas, detección de banderas rojas. En Mediclic la IA siempre es asistiva — el médico decide."
+  },
+  {
+    "slug": "llm",
+    "termino": "LLM",
+    "aliases": [
+      "Large Language Model"
+    ],
+    "definicion": "Modelo de lenguaje a gran escala (GPT, Claude, Gemini, Llama). Genera y razona sobre texto. Mediclic usa una cadena de LLMs con failover automático."
+  },
+  {
+    "slug": "rag",
+    "termino": "RAG",
+    "aliases": [
+      "Retrieval-Augmented Generation"
+    ],
+    "definicion": "Técnica donde un LLM consulta una base de datos antes de responder, para reducir alucinaciones. Mediclic usa RAG sobre catálogos auditados (CIE-11, medicamentos, farmacias)."
+  },
+  {
+    "slug": "alucinacion-llm",
+    "termino": "Alucinación (de un LLM)",
+    "aliases": [],
+    "definicion": "Cuando un modelo de IA genera información que suena plausible pero es falsa. Mediclic mitiga este riesgo con reglas deterministas para banderas rojas y catálogos auditados para diagnóstico y dosis."
+  },
+  {
+    "slug": "modelo-deterministico",
+    "termino": "Modelo determinista",
+    "aliases": [],
+    "definicion": "Sistema que da siempre la misma salida para la misma entrada. Lo opuesto a un LLM (que es probabilístico). Mediclic implementa las 22 banderas rojas como reglas deterministas para máxima predictibilidad."
+  },
+  {
+    "slug": "human-in-the-loop",
+    "termino": "Human-in-the-loop",
+    "aliases": [],
+    "definicion": "Diseño de IA donde una persona valida cada decisión antes de actuar. En Mediclic, todas las sugerencias de IA pasan por revisión del médico antes de guardarse o firmarse."
+  },
+  {
+    "slug": "data-residency",
+    "termino": "Data residency",
+    "aliases": [],
+    "definicion": "País o región donde se almacenan y procesan los datos. Mediclic mantiene los datos clínicos y el procesamiento de audio dentro de Guatemala."
+  },
+  {
+    "slug": "multi-tenant",
+    "termino": "Multi-tenant",
+    "aliases": [],
+    "definicion": "Arquitectura de software donde múltiples clientes (clínicas) comparten la misma instancia pero con aislamiento estricto de datos. Cada clínica solo ve sus pacientes."
+  },
+  {
+    "slug": "tier-3",
+    "termino": "Data Center Tier-3",
+    "aliases": [],
+    "definicion": "Estándar Uptime Institute para data centers con redundancia N+1, mantenimiento concurrente y disponibilidad ≥99.982% (≈1.6 horas downtime/año)."
+  },
+  {
+    "slug": "ssl",
+    "termino": "SSL/TLS",
+    "aliases": [],
+    "definicion": "Protocolo criptográfico que cifra el tráfico web (HTTPS). Estándar mínimo para cualquier sistema que maneje datos clínicos."
+  },
+  {
+    "slug": "sha-256",
+    "termino": "SHA-256",
+    "aliases": [],
+    "definicion": "Función hash criptográfica que produce una firma única de 256 bits para cualquier dato. Mediclic la usa junto con HMAC para firmar recetas."
+  },
+  {
+    "slug": "hmac",
+    "termino": "HMAC",
+    "aliases": [],
+    "definicion": "Hash-based Message Authentication Code. Combina una clave secreta con un hash criptográfico para verificar autenticidad e integridad de un mensaje."
+  },
+  {
+    "slug": "auditoria-clinica",
+    "termino": "Auditoría clínica",
+    "aliases": [],
+    "definicion": "Registro completo de quién hizo qué cambio, cuándo y por qué en el expediente. Mediclic versiona cada cambio por usuario y timestamp."
+  },
+  {
+    "slug": "exportacion-datos",
+    "termino": "Exportación de datos",
+    "aliases": [],
+    "definicion": "Capacidad de extraer toda tu información del sistema en un formato portable (JSON, CSV, PDF). Mediclic ofrece exportación con un clic, sin lock-in."
+  },
+  {
+    "slug": "vendor-lock-in",
+    "termino": "Vendor lock-in",
+    "aliases": [],
+    "definicion": "Situación donde un cliente queda atrapado con un proveedor por la dificultad o costo de migrar. Mediclic combate esto con exportación abierta y APIs documentadas."
+  },
+  {
+    "slug": "interoperabilidad",
+    "termino": "Interoperabilidad",
+    "aliases": [],
+    "definicion": "Capacidad de dos sistemas de salud de intercambiar datos clínicos de forma estructurada y comprensible. Estándares clave: HL7, FHIR, CDA."
+  },
+  {
+    "slug": "api",
+    "termino": "API",
+    "aliases": [
+      "Application Programming Interface"
+    ],
+    "definicion": "Interfaz programática para que otros sistemas consulten o modifiquen datos. Mediclic expondrá API pública para integraciones de partners."
+  },
+  {
+    "slug": "mcp",
+    "termino": "MCP (Model Context Protocol)",
+    "aliases": [],
+    "definicion": "Protocolo abierto de Anthropic para que agentes de IA (Claude, ChatGPT) consulten servicios externos en tiempo real. Mediclic está construyendo un servidor MCP público."
+  },
+  {
+    "slug": "geo-aeo",
+    "termino": "GEO / AEO",
+    "aliases": [
+      "Generative Engine Optimization",
+      "Answer Engine Optimization"
+    ],
+    "definicion": "Optimización para que motores generativos (ChatGPT, Claude, Perplexity, Gemini) descubran, citen y recomienden tu sitio. Complementa al SEO tradicional de Google."
+  },
+  {
+    "slug": "llms-txt",
+    "termino": "llms.txt",
+    "aliases": [],
+    "definicion": "Archivo estándar emergente, similar a robots.txt, que un sitio publica para guiar a los LLMs sobre cómo entender e ingerir su contenido. Mediclic publica /llms.txt y /llms-full.txt."
+  },
+  {
+    "slug": "schema-org",
+    "termino": "Schema.org",
+    "aliases": [
+      "JSON-LD"
+    ],
+    "definicion": "Vocabulario estructurado para describir entidades web (Organization, MedicalBusiness, Product, FAQPage). Lo usan Google, Bing y los LLMs para entender una página."
+  }
+]

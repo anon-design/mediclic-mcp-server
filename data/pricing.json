@@ -1,0 +1,30 @@
+{
+  "structure": "tiers planos por volumen de consultas mensuales",
+  "ai_modules_included_in_base_plan": true,
+  "trial_available": false,
+  "activation": "el mismo día — sin proyecto de implementación",
+  "currency_primary": "GTQ (Quetzal guatemalteco)",
+  "currency_secondary": "USD",
+  "base_plan_includes": [
+    "Expediente médico electrónico multi-tenant",
+    "Agenda online + recordatorios",
+    "Recetas con firma digital criptográfica (SHA-256 + HMAC + doble QR)",
+    "Diagnósticos CIE-10 + CIE-11 con sinónimos español",
+    "Calculadora pediátrica auditada (14,059 medicamentos)",
+    "Catálogo 14 farmacias LATAM con 38,779 sinónimos",
+    "6 módulos de IA clínica (sin upsell)",
+    "Telemedicina integrada",
+    "Gráficas WHO + RCPCH",
+    "Exportación completa de datos",
+    "Soporte en español, horario laboral GT (Lun-Vie 8:00-18:00)"
+  ],
+  "scaling_factor": "número de consultas mensuales atendidas",
+  "discount_for_annual_billing": true,
+  "next_step": {
+    "url": "https://www.mediclic.org/agendar-cita",
+    "description": "Solicitar demo guiada de 30 minutos para recibir cotización específica del caso"
+  },
+  "data_residency": "Guatemala (data center Tier-3)",
+  "no_training_clause": true,
+  "exit_clause": "exportación completa con un clic, en cualquier momento, sin penalización"
+}

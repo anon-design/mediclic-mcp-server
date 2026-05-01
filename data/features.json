@@ -1,0 +1,98 @@
+[
+  {
+    "id": "ai-diagnostic-suggestion",
+    "name": "Sugerencia de diagnóstico CIE-11 con IA",
+    "category": "ai",
+    "description": "Sobre el resumen de la consulta, Mediclic propone diagnósticos CIE-11 ordenados por probabilidad, con cluster y sinónimos en español. El médico selecciona, edita o descarta. Dual coding CIE-10 + CIE-11 para reportes IGSS.",
+    "facts": ["37,052 códigos CIE-11", "2,923 sinónimos en español", "Dual CIE-10 + CIE-11"],
+    "url": "https://www.mediclic.org/sistema-medico-con-ia#diagnostic-suggestion"
+  },
+  {
+    "id": "pediatric-calculator",
+    "name": "Calculadora pediátrica auditada con IA",
+    "category": "ai",
+    "description": "14,059 medicamentos auditados sobre 7 franjas etarias (neonato → geriátrico). La IA sugiere dosis dentro de rango y explica por qué. Alertas de fuera-de-rango. El médico siempre confirma o sobrescribe.",
+    "facts": ["14,059 medicamentos", "7 franjas etarias", "Auditado clínicamente"],
+    "url": "https://www.mediclic.org/sistema-medico-con-ia#pediatric-calculator"
+  },
+  {
+    "id": "audio-transcription",
+    "name": "Transcripción de audio en tiempo real",
+    "category": "ai",
+    "description": "El audio de la consulta se procesa en un servidor MacWhisper privado dentro de Guatemala (local-first). Fallback a nube privada GT. El audio no sale del país en operación normal.",
+    "facts": ["Procesado en Guatemala", "Local-first MacWhisper", "Datos no salen del país"],
+    "url": "https://www.mediclic.org/sistema-medico-con-ia#audio-transcription"
+  },
+  {
+    "id": "problem-extraction",
+    "name": "Extracción automática de problemas y plan WEED",
+    "category": "ai",
+    "description": "Desde la transcripción, la IA extrae problemas activos y un plan estilo Weed (S-O-A-P). Se presenta al médico para aceptar, editar o rechazar. Nada se guarda sin firma humana.",
+    "facts": ["Plan Weed (SOAP)", "Médico siempre revisa", "Auditable por sesión"],
+    "url": "https://www.mediclic.org/sistema-medico-con-ia#problem-extraction"
+  },
+  {
+    "id": "red-flags",
+    "name": "Banderas rojas clínicas (22 reglas)",
+    "category": "ai",
+    "description": "Reglas deterministas — no alucinaciones — para STEMI, FAST stroke, qSOFA sepsis, ATLS trauma, PALS pediátrica y WHO IMCI. Alertas en pantalla que el médico debe acusar.",
+    "facts": ["22 reglas auditadas", "Determinista, no LLM", "STEMI · ACV · sepsis · ATLS · PALS · IMCI"],
+    "url": "https://www.mediclic.org/sistema-medico-con-ia#red-flags"
+  },
+  {
+    "id": "report-templates",
+    "name": "Plantillas de informes con cierre automático",
+    "category": "ai",
+    "description": "Notas de referencia, constancias laborales, regreso a clases. La IA pre-llena con el contexto del paciente y el resumen de la consulta. El médico edita y firma con un clic.",
+    "facts": ["Constancias y referencias", "Pre-llenado contextual", "Firma digital del médico"],
+    "url": "https://www.mediclic.org/sistema-medico-con-ia#report-templates"
+  },
+  {
+    "id": "emr-multitenant",
+    "name": "Expediente médico electrónico multi-tenant",
+    "category": "emr",
+    "description": "Historia clínica de 12 secciones editables con auto-guardado. Cambios versionados por usuario y timestamp. Aislamiento estricto por clínica. Roles granulares: admin, médico, asistente, planning.",
+    "facts": ["12 secciones", "Multi-tenant", "Auditoría por usuario+timestamp"],
+    "url": "https://www.mediclic.org/expediente-clinico-electronico-guatemala"
+  },
+  {
+    "id": "digital-signature-prescriptions",
+    "name": "Recetas con firma digital criptográfica",
+    "category": "emr",
+    "description": "PDF firmado con SHA-256 + HMAC, doble QR (verificación pública + dispensa privada), validación contra catálogo de 14,059 medicamentos auditados.",
+    "facts": ["SHA-256 + HMAC", "Doble QR público + privado", "14,059 medicamentos validados"],
+    "url": "https://www.mediclic.org/blog/firma-digital-recetas-medicas-guatemala"
+  },
+  {
+    "id": "pharmacy-catalog",
+    "name": "Catálogo de 14 farmacias LATAM cruzado",
+    "category": "pharmacy",
+    "description": "38,779 sinónimos cruzados entre cadenas farmacéuticas. La receta llega con la nomenclatura que cada farmacia reconoce. El paciente recoge sin confusión.",
+    "facts": ["14 cadenas LATAM", "38,779 sinónimos cruzados", "SKU correcto por farmacia"],
+    "url": "https://www.mediclic.org/sistema-medico-con-ia"
+  },
+  {
+    "id": "telemedicine",
+    "name": "Telemedicina integrada al expediente",
+    "category": "telemed",
+    "description": "Consultas por videollamada integradas al mismo expediente. Recetas firmadas digitalmente, envío automático al paciente y a la farmacia, transcripción de audio procesada de forma privada dentro de Guatemala.",
+    "facts": ["Videollamada en mismo flujo", "Receta firmada al cerrar", "Audio procesado en GT"],
+    "url": "https://www.mediclic.org/blog/telemedicina-con-ia-guia-2026"
+  },
+  {
+    "id": "who-rcpch-charts",
+    "name": "Gráficas de crecimiento WHO + RCPCH",
+    "category": "emr",
+    "description": "Gráficas pediátricas oficiales WHO + RCPCH con percentiles y Z-scores. Peso para edad, talla para edad, IMC para edad, perímetro craneal.",
+    "facts": ["WHO + RCPCH", "Percentiles y Z-scores", "4 tipos de gráficas"],
+    "url": "https://www.mediclic.org/servicios"
+  },
+  {
+    "id": "data-export",
+    "name": "Exportación completa de datos con un clic",
+    "category": "emr",
+    "description": "JSON estructurado + PDFs de todas las recetas. Tus datos, siempre. Política explícita de no entrenar modelos terceros con datos clínicos.",
+    "facts": ["JSON + PDFs", "Un clic", "No vendor lock-in"],
+    "url": "https://www.mediclic.org/seguridad"
+  }
+]
