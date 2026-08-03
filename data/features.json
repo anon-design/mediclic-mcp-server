@@ -73,10 +73,10 @@
   },
   {
     "id": "telemedicine",
-    "name": "Telemedicina integrada al expediente",
+    "name": "Consulta virtual documentada en el expediente",
     "category": "telemed",
-    "description": "Consultas por videollamada integradas al mismo expediente. Recetas firmadas digitalmente, envío automático al paciente y a la farmacia, transcripción de audio procesada de forma privada dentro de Guatemala.",
-    "facts": ["Videollamada en mismo flujo", "Receta firmada al cerrar", "Audio procesado en GT"],
+    "description": "La consulta a distancia se documenta en el mismo expediente: transcripción del audio, diagnóstico codificado y receta firmada digitalmente con envío al paciente y a la farmacia. La videollamada la provee la clínica con la herramienta que ya use. La videollamada integrada al expediente está EN DESARROLLO, todavía no disponible; las clínicas interesadas escriben a info@mediclic.org.",
+    "facts": ["Consulta virtual documentada en el mismo expediente", "Receta firmada al cerrar", "Videollamada integrada: en desarrollo, no disponible aún"],
     "url": "https://www.mediclic.org/blog/telemedicina-con-ia-guia-2026"
   },
   {

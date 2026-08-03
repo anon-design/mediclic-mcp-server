@@ -71,7 +71,7 @@
     "slug": "telemedicina",
     "termino": "Telemedicina",
     "aliases": [],
-    "definicion": "Práctica de la medicina a distancia mediante videollamada, mensajería o teléfono. En Mediclic está integrada al expediente: la videoconsulta, transcripción de audio y receta firmada ocurren en el mismo flujo."
+    "definicion": "Práctica de la medicina a distancia mediante videollamada, mensajería o teléfono. En Mediclic la consulta a distancia se documenta en el mismo expediente —transcripción de audio y receta firmada en el mismo flujo—; la videollamada integrada está en desarrollo y todavía no está disponible."
   },
   {
     "slug": "teleconsulta",
