@@ -39,8 +39,8 @@
     "steps": [
       {
         "stage": "Videollamada (minutos 0-1)",
-        "ai_module": "Telemedicina integrada",
-        "action": "Paciente entra al link, conecta cámara y micrófono. Médico ve la cara y empieza la entrevista."
+        "ai_module": "Videollamada provista por la clínica (Mediclic documenta la consulta; la videollamada integrada está en desarrollo)",
+        "action": "El paciente entra a la videollamada que la clínica ya usa. El médico abre la consulta en Mediclic y empieza la entrevista."
       },
       {
         "stage": "Entrevista con transcripción (minutos 1-7)",
